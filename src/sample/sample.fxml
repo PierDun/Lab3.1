@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <TabPane prefHeight="564.0" prefWidth="758.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Нелинейное уравнение">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <GridPane layoutY="8.0" prefHeight="523.0" prefWidth="758.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="586.0" minWidth="10.0" prefWidth="586.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="172.39999999999998" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="396.4" minHeight="10.0" prefHeight="393.4" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="256.4" minHeight="10.0" prefHeight="129.39999999999998" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <LineChart fx:id="eqChart" alternativeColumnFillVisible="true" createSymbols="false" horizontalZeroLineVisible="false" legendSide="LEFT" legendVisible="false" verticalZeroLineVisible="false">
+                                            <xAxis>
+                                                <CategoryAxis label="X" />
+                                            </xAxis>
+                                            <yAxis>
+                                                <NumberAxis label="Y" side="LEFT" />
+                                            </yAxis>
+                                        </LineChart>
+                                        <Button fx:id="eqSolve" mnemonicParsing="false" onAction="#solveEquation" prefHeight="49.0" prefWidth="130.0" text="Вычислить" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <GridPane GridPane.columnIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <TextField fx:id="eqRight" promptText="Вторая точка" GridPane.rowIndex="4" />
+                                                <CheckBox fx:id="horde" mnemonicParsing="false" text="Метод хорд" />
+                                                <CheckBox fx:id="iteration" mnemonicParsing="false" text="Метод простой итерации" GridPane.rowIndex="1" />
+                                                <ChoiceBox fx:id="funChoose" prefWidth="150.0" GridPane.rowIndex="2" />
+                                                <TextField fx:id="eqLeft" prefHeight="26.0" prefWidth="44.0" promptText="Первая точка" GridPane.rowIndex="3" />
+                                    <TextField fx:id="eqAccuracy" promptText="Допустимая погрешность" GridPane.rowIndex="5" />
+                                            </children>
+                                        </GridPane>
+                              <Label fx:id="eqLabel" text="Заполните поля и выбереите функцию и метод решения" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Система уравнений">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutY="-1.0" prefHeight="534.0" prefWidth="758.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="720.9999694824219" minWidth="10.0" prefWidth="594.9999694824219" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="163.00003051757812" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="408.4" minHeight="10.0" prefHeight="408.4" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="262.4" minHeight="10.0" prefHeight="126.39999999999998" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <LineChart fx:id="sysChart" createSymbols="false" horizontalZeroLineVisible="false">
+                                <xAxis>
+                                  <CategoryAxis label="X1" side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis label="X2" side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                              <Button fx:id="sysSolve" mnemonicParsing="false" onAction="#solveSystem" prefHeight="49.0" prefWidth="130.0" text="Вычислить" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <GridPane GridPane.columnIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="sysFirst" promptText="x1(0)" />
+                                    <TextField fx:id="sysSecond" promptText="x2(0)" GridPane.rowIndex="1" />
+                                    <TextField fx:id="sysAcc" promptText="Погрешность" GridPane.rowIndex="2" />
+                                    <ChoiceBox fx:id="firstFun" prefWidth="150.0" GridPane.rowIndex="3" />
+                                    <ChoiceBox fx:id="secondFun" prefWidth="150.0" GridPane.rowIndex="4" />
+                                 </children>
+                              </GridPane>
+                              <Label fx:id="sysLabel" text="Введите значения и выберите функции для системы" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>
